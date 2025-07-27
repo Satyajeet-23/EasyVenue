@@ -1,0 +1,91 @@
+# Frontend specific ignores
+## Dependencies
+Frontend/node_modules
+Frontend/.pnp
+Frontend/.pnp.js
+
+## Testing
+Frontend/coverage
+
+## Production
+Frontend/dist
+Frontend/dist-ssr
+Frontend/build
+Frontend/*.local
+
+## Logs
+Frontend/logs
+Frontend/*.log
+Frontend/npm-debug.log*
+Frontend/yarn-debug.log*
+Frontend/yarn-error.log*
+Frontend/pnpm-debug.log*
+
+# Backend specific ignores
+## Compiled output
+Backend/target/
+BackEnd1/target/
+*.class
+
+## Logs
+Backend/logs/
+BackEnd1/logs/
+*.log
+
+## Spring Boot
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+## Maven
+.mvn/
+mvnw
+mvnw.cmd
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE specific files
+## IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Other IDE files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+## Eclipse
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Cache and Temporary files
+*.cache
+.eslintcache
+*.tmp
+*.swp
+*.swo
