@@ -9,7 +9,7 @@ export default function AdminNavbar() {
           {/* Logo & Brand */}
           <div className="flex items-center gap-3">
             <Link
-              to="/admin/venues"
+              to="/"
               className="text-2xl flex items-center gap-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-400 font-extrabold"
               aria-label="Go to Admin Dashboard"
             >

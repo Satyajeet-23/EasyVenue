@@ -110,100 +110,103 @@ export default function VenueList() {
         {/* VENUES GRID */}
         {/* Responsive grid layout with interactive venue cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data?.data?.map((venue) => (
-            <Link
-              to={`/venues/${venue.id || venue._id}`}
-              key={venue.id || venue._id}
-              className="group bg-white rounded-2xl overflow-hidden p-6 shadow-lg hover:shadow-xl
+          {(data?.data || [])
+            .sort((a, b) => a.id - b.id)
+            ?.map((venue) => (
+              <Link
+                to={`/venues/${venue.id || venue._id}`}
+                key={venue.id || venue._id}
+                className="group bg-white rounded-2xl overflow-hidden p-6 shadow-lg hover:shadow-xl
                        border border-gray-200 transition-all duration-300 transform hover:-translate-y-1
                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              aria-label={`View details for ${venue.name} in ${venue.location}`}
-            >
-              {/* VENUE HEADER */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex-1">
-                  {/* Venue Name */}
-                  <h3
-                    className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 
+                aria-label={`View details for ${venue.name} in ${venue.location}`}
+              >
+                {/* VENUE HEADER */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex-1">
+                    {/* Venue Name */}
+                    <h3
+                      className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 
                                transition-colors duration-300 mb-2 line-clamp-1"
-                  >
-                    {venue.name}
-                  </h3>
+                    >
+                      {venue.name}
+                    </h3>
 
-                  {/* Location with icon */}
-                  <div className="flex items-center text-gray-500">
-                    <MapPin
-                      className="w-4 h-4 mr-2 flex-shrink-0"
-                      aria-hidden="true"
-                    />
-                    <span className="text-sm line-clamp-1">
-                      {venue.location}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Venue Icon - Animated on hover */}
-                <div
-                  className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center 
-                              transform group-hover:scale-110 transition-all duration-300 ml-4"
-                >
-                  <Building2 className="w-6 h-6 text-blue-500" />
-                </div>
-              </div>
-
-              {/* VENUE DETAILS */}
-              <div className="space-y-4">
-                {/* CAPACITY AND PRICE GRID */}
-                <div className="grid grid-cols-2 gap-4">
-                  {/* Capacity Card */}
-                  <div className="flex items-center p-3 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                    <Users
-                      className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0"
-                      aria-hidden="true"
-                    />
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">
-                        Capacity
-                      </p>
-                      <p className="font-semibold text-gray-900">
-                        {venue.capacity}
-                      </p>
+                    {/* Location with icon */}
+                    <div className="flex items-center text-gray-500">
+                      <MapPin
+                        className="w-4 h-4 mr-2 flex-shrink-0"
+                        aria-hidden="true"
+                      />
+                      <span className="text-sm line-clamp-1">
+                        {venue.location}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Price Card */}
-                  <div className="flex items-center p-3 rounded-xl bg-purple-50 group-hover:bg-purple-100 transition-colors">
-                    <IndianRupee
-                      className="w-5 h-5 text-purple-600 mr-3 flex-shrink-0"
-                      aria-hidden="true"
-                    />
-                    <div>
-                      <p className="text-xs text-gray-500 font-medium">
-                        Per Hour
-                      </p>
-                      <p className="font-semibold text-gray-900">
-                        ₹{venue.pricePerHour?.toLocaleString("en-IN") || "N/A"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* VIEW DETAILS CTA */}
-                {/* Interactive call-to-action with animated arrow */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <span className="text-sm font-medium text-gray-600">
-                    View Details
-                  </span>
+                  {/* Venue Icon - Animated on hover */}
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-50 
-                                group-hover:bg-blue-600 transition-all duration-300"
+                    className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center 
+                              transform group-hover:scale-110 transition-all duration-300 ml-4"
                   >
-                    <ArrowRight className="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300" />
+                    <Building2 className="w-6 h-6 text-blue-500" />
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+
+                {/* VENUE DETAILS */}
+                <div className="space-y-4">
+                  {/* CAPACITY AND PRICE GRID */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Capacity Card */}
+                    <div className="flex items-center p-3 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors">
+                      <Users
+                        className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">
+                          Capacity
+                        </p>
+                        <p className="font-semibold text-gray-900">
+                          {venue.capacity}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Price Card */}
+                    <div className="flex items-center p-3 rounded-xl bg-purple-50 group-hover:bg-purple-100 transition-colors">
+                      <IndianRupee
+                        className="w-5 h-5 text-purple-600 mr-3 flex-shrink-0"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">
+                          Per Hour
+                        </p>
+                        <p className="font-semibold text-gray-900">
+                          ₹
+                          {venue.pricePerHour?.toLocaleString("en-IN") || "N/A"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* VIEW DETAILS CTA */}
+                  {/* Interactive call-to-action with animated arrow */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <span className="text-sm font-medium text-gray-600">
+                      View Details
+                    </span>
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-50 
+                                group-hover:bg-blue-600 transition-all duration-300"
+                    >
+                      <ArrowRight className="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
         </div>
 
         {/* EMPTY STATE */}

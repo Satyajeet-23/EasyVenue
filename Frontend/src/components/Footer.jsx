@@ -2,7 +2,7 @@ import { Code, Copyright, Linkedin, Github, Globe } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-200 py-6 mt-8 shadow-inner">
+    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-300 py-6 mt-8 shadow-inner">
       <div className="mx-auto px-4 flex flex-col items-center space-y-2 text-gray-600">
         {/* Bottom: Designed by + Social Links */}
         <div className="flex flex-col items-center space-y-2">

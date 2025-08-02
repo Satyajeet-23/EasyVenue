@@ -63,7 +63,7 @@ function HomePage() {
 
             {/* Admin Panel Button - Secondary Action */}
             <Link to="/admin/venues">
-              <button className="group relative px-8 py-4 rounded-lg bg-black text-gray-200 font-semibold tracking-wide uppercase text-sm border border-gray-600/50 hover:border-gray-500 transition-all duration-300 ease-in-out hover:text-white hover:bg-gray-900 shadow-[0_0_15px_rgba(75,85,99,0.25)] hover:shadow-[0_0_25px_rgba(75,85,99,0.4)] active:translate-y-1 active:shadow-[0_0_10px_rgba(75,85,99,0.4)] active:scale-[0.98]">
+              <button className="group relative px-8 py-4 rounded-lg bg-gray-900 text-gray-200 font-semibold tracking-wide uppercase text-sm border border-gray-600/50 hover:border-gray-500 transition-all duration-300 ease-in-out hover:text-white hover:bg-black shadow-[0_0_15px_rgba(75,85,99,0.25)] hover:shadow-[0_0_25px_rgba(75,85,99,0.4)] active:translate-y-1 active:shadow-[0_0_10px_rgba(75,85,99,0.4)] active:scale-[0.98]">
                 <span className="flex items-center gap-3 relative">
                   {/* Star icon for admin privileges */}
                   <svg
