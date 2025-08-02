@@ -1,22 +1,22 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
-import PublicLayout from './layouts/PublicLayout';
-import AdminLayout from './layouts/AdminLayout';
+import PublicLayout from "./layouts/PublicLayout";
+import AdminLayout from "./layouts/AdminLayout";
 
 // Public Pages
-import HomePage from './pages/user/HomePage';
-import VenueList from './pages/user/VenueList';
-import VenueDetails from './pages/user/VenueDetails';
-import BookingForm from './pages/user/BookingForm';
-import BookingSuccess from './pages/user/BookingSuccess';
+import HomePage from "./pages/user/HomePage";
+import VenueList from "./pages/user/VenueList";
+import VenueDetails from "./pages/user/VenueDetails";
+import BookingForm from "./pages/user/BookingForm";
+import BookingSuccess from "./pages/user/BookingSuccess";
 
 // Admin Pages
-import AdminVenueList from './pages/admin/AdminVenueList';
-import AddVenueForm from './pages/admin/AddVenueForm';
-import AvailabilityForm from './pages/admin/AvailabilityForm';
-import RecentBookings from './pages/admin/RecentBookings';
-import NotFound from './pages/NotFound';
-import Footer from './components/Footer';
+import AdminVenueList from "./pages/admin/AdminVenueList";
+import AddVenueForm from "./pages/admin/AddVenueForm";
+import AvailabilityForm from "./pages/admin/AvailabilityForm";
+import RecentBookings from "./pages/admin/RecentBookings";
+import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -35,7 +35,10 @@ export default function App() {
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="venues" element={<AdminVenueList />} />
           <Route path="venues/new" element={<AddVenueForm />} />
-          <Route path="venues/:id/availability" element={<AvailabilityForm />} />
+          <Route
+            path="venues/:id/availability"
+            element={<AvailabilityForm />}
+          />
           <Route path="bookings/recent" element={<RecentBookings />} />
         </Route>
 
