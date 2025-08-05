@@ -212,7 +212,7 @@ export default function BookingForm() {
                           htmlFor="userName"
                           className="block text-sm font-medium text-slate-700 mb-2"
                         >
-                          Full Name *
+                          Full Name <span className="text-red-600">*</span>
                         </label>
                         <div className="relative">
                           <input
@@ -237,7 +237,7 @@ export default function BookingForm() {
                           htmlFor="userEmail"
                           className="block text-sm font-medium text-slate-700 mb-2"
                         >
-                          Email Address *
+                          Email Address <span className="text-red-600">*</span>
                         </label>
                         <div className="relative">
                           <input
@@ -271,7 +271,7 @@ export default function BookingForm() {
                           htmlFor="bookingDate"
                           className="block text-sm font-medium text-slate-700 mb-2"
                         >
-                          Booking Date *
+                          Booking Date <span className="text-red-600">*</span>
                         </label>
                         <div className="relative">
                           <input
@@ -299,7 +299,7 @@ export default function BookingForm() {
                           htmlFor="hoursBooked"
                           className="block text-sm font-medium text-slate-700 mb-2"
                         >
-                          Duration (Hours) *
+                          Duration (Hours) <span className="text-red-600">*</span>
                         </label>
                         <div className="relative">
                           <input

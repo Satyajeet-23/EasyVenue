@@ -16,7 +16,6 @@ import AddVenueForm from "./pages/admin/AddVenueForm";
 import AvailabilityForm from "./pages/admin/AvailabilityForm";
 import RecentBookings from "./pages/admin/RecentBookings";
 import NotFound from "./pages/NotFound";
-import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -46,7 +45,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <Footer />
+      
     </>
   );
 }
